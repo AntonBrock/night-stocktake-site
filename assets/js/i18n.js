@@ -88,6 +88,40 @@
     host.insertBefore(sel, after || null);
   }
 
+  // Deployed site (Tools/site_build.py): every language is a real page (/ru/, /zh-hans/...) for search engines;
+  // the switcher then goes to that page. The source pages (preview) translate in place.
+  const staticMeta = document.querySelector('meta[name="ns-static"]');
+  if (staticMeta) {
+    const FOLDERS = { "en": "", "zh-Hans": "zh-hans/", "ru": "ru/", "pt-BR": "pt-br/", "es": "es/", "de": "de/" };
+    const here = staticMeta.content;
+    const page = (document.querySelector('meta[name="ns-page"]') || {}).content || "index.html";
+    const target = (l) => (root + FOLDERS[l] + page).replace(/index\.html$/, "") || "./";
+    // First visit to the English page from a browser in one of our languages: go there (once; the choice is kept).
+    const q = new URLSearchParams(location.search).get("lang");
+    if (here === "en" && !store.get() && !q) {
+      for (const l of navigator.languages || [navigator.language]) {
+        const c = fromTag(l);
+        if (c && c !== "en") { location.replace(target(c)); return; }
+        if (c === "en") break;
+      }
+    }
+    document.documentElement.dataset.lang = here;
+    window.NS_T = (s) => s;
+    const host = document.querySelector("header.top .wrap");
+    if (host) {
+      const sel = document.createElement("select");
+      sel.className = "lang"; sel.setAttribute("aria-label", "Language");
+      for (const [c, short, name] of LANGS) {
+        const o = document.createElement("option");
+        o.value = c; o.textContent = short + "  " + name; o.lang = c; if (c === here) o.selected = true;
+        sel.appendChild(o);
+      }
+      sel.addEventListener("change", () => { store.set(sel.value); location.href = target(sel.value); });
+      host.insertBefore(sel, host.querySelector(".btn") || null);
+    }
+    return;
+  }
+
   const lang = pick();
   collect();
   switcher(lang);

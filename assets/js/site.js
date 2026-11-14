@@ -4,6 +4,8 @@
   const C = window.NS_CONFIG || {};
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const root = document.documentElement.dataset.root || "";
+  // Strings made here, translated on the static language pages (window.NS_DYN, written by Tools/site_build.py).
+  const T = (x) => (window.NS_DYN && window.NS_DYN[x]) || x;
 
   // ---- links: data-link="discord|steam|press|youtube|tiktok|x"; empty -> "SOON"
   const map = { discord: C.discordUrl, steam: C.steamUrl, youtube: C.youtube, tiktok: C.tiktok, x: C.x,
@@ -11,9 +13,9 @@
   document.querySelectorAll("[data-link]").forEach((a) => {
     const url = map[a.dataset.link];
     if (url) { a.href = url; if (!url.startsWith("mailto:")) { a.target = "_blank"; a.rel = "noopener"; } }
-    else { a.classList.add("soon"); a.removeAttribute("href"); if (!a.classList.contains("btn")) return; const t = document.createElement("span"); t.className = "tag"; t.textContent = "SOON"; a.appendChild(t); }
+    else { a.classList.add("soon"); a.removeAttribute("href"); if (!a.classList.contains("btn")) return; const t = document.createElement("span"); t.className = "tag"; t.textContent = T("SOON"); a.appendChild(t); }
   });
-  document.querySelectorAll("[data-email]").forEach((e) => { e.textContent = C.pressEmail || "coming soon - ask on our Discord"; });
+  document.querySelectorAll("[data-email]").forEach((e) => { e.textContent = C.pressEmail || T("coming soon - ask on our Discord"); });
 
   // ---- hero: stickers slapped in a spiral towards the title, the page kicks on every slap, then the title plate slams
   const hero = document.querySelector(".hero");
@@ -58,7 +60,7 @@
   document.querySelectorAll(".trailer").forEach((tr) => {
     const id = C.trailerYouTubeId;
     const label = tr.querySelector(".play div");
-    if (!id) { if (label) label.textContent = "TRAILER SOON"; tr.style.cursor = "default"; return; }
+    if (!id) { if (label) label.textContent = T("TRAILER SOON"); tr.style.cursor = "default"; return; }
     tr.addEventListener("click", () => {
       const f = document.createElement("iframe");
       f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
@@ -77,7 +79,7 @@
   }
 
   // ---- copy buttons (press page)
-  const toast = document.createElement("div"); toast.className = "toast"; toast.textContent = "COPIED"; document.body.appendChild(toast);
+  const toast = document.createElement("div"); toast.className = "toast"; toast.textContent = T("COPIED"); document.body.appendChild(toast);
   document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", () => {
     const src = document.querySelector(b.dataset.copy);
     if (!src) return;

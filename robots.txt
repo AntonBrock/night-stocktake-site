@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://antonbrock.github.io/night-stocktake-site/sitemap.xml
