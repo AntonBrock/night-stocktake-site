@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Night Stocktake · Aisle not found</title>
+<meta name="theme-color" content="#0b1210">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=VT323&display=swap">
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0b1210; color: #dfe7e3; font-family: "JetBrains Mono", monospace; text-align: center; padding: 16px; box-sizing: border-box; }
+  h1 { font-family: VT323, monospace; font-weight: 400; font-size: clamp(64px, 16vw, 150px); margin: 0; color: #78f0be; text-shadow: 0 0 18px rgba(120,240,190,.5); animation: flick 4s infinite; }
+  p { color: #8fa39b; max-width: 520px; }
+  a { display: inline-block; margin-top: 18px; color: #0b1210; background: #ffc446; padding: 10px 22px; text-decoration: none; font-weight: 700; }
+  @keyframes flick { 0%, 92%, 100% { opacity: 1 } 93% { opacity: .3 } 95% { opacity: .9 } 96% { opacity: .2 } }
+  @media (prefers-reduced-motion: reduce) { h1 { animation: none; } }
+</style>
+</head>
+<body>
+<div>
+  <h1>AISLE 404</h1>
+  <p>This aisle was here a minute ago. The store moved it while nobody was looking.</p>
+  <a id="back" href="/">BACK TO THE BREAK ROOM</a>
+</div>
+<script>
+  // project pages live under /repo-name/: send people to that root, not the domain root
+  var seg = location.pathname.split("/").filter(Boolean)[0];
+  if (location.hostname.endsWith("github.io") && seg) document.getElementById("back").href = "/" + seg + "/";
+</script>
+</body>
+</html>

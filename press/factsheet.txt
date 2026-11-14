@@ -1,0 +1,27 @@
+NIGHT STOCKTAKE - FACT SHEET
+
+Developer / publisher: StaleMilk Games (independent, self-published)
+Release date: TBA
+Platforms: PC (Steam)
+Players: 1-4, online co-op
+Genre: co-op horror, physics
+Price: TBA
+Language: English
+Engine: Unreal Engine 5
+
+SHORT DESCRIPTION
+Up to four night workers count the stock of a hypermarket that rearranges itself when nobody is looking. Scan, carry, deliver the quota - and get out at six.
+
+LONG DESCRIPTION
+Night Stocktake is a co-op horror game about the worst night shift in retail. Clock in with up to three friends, grab a scanner and a cart, and count everything in a hypermarket that will not hold still: lights flicker, shelves rearrange, departments swap places the moment nobody is watching. Your tablet map is a snapshot that goes stale. Six things work the night with you - mannequins that move only when unseen, a book that bites, a shopper you must not scan near, a forklift that never brakes, a cashier who scans whoever stands in her lane and a guard who checks badges. Meet the quota, clock out at six, spend your wage on perk cards, stickers, heads, hats and scanner skins.
+
+KEY FEATURES
+- 1-4 player online co-op night shifts
+- A store that rearranges itself when unobserved
+- Physics: wobbly carts, falling goods, two-person fridges
+- Six threats that hunt by noise, each in its own way
+- 85 achievement stickers for your badge and your box head
+- Box-head customization: heads, hats, shoes, faces, scanner skins, lockers
+
+CREATOR POLICY
+You may stream, record and monetize videos of Night Stocktake on any platform without asking. A link to the game is appreciated. The game's music and sounds are not registered with Content ID. Please do not imply official endorsement by StaleMilk Games.
