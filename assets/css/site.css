@@ -1,3 +1,7 @@
+/* Fusion Pixel (OFL, assets/fonts): the game's own fallback for Cyrillic in titles (VT323 has none) and for Chinese.
+   unicode-range: the browser downloads it only when such characters are on the page. */
+@font-face { font-family: "Fusion Pixel"; src: url(../fonts/fusion-pixel-12px-zh_hans.woff2) format("woff2"); font-display: swap;
+  unicode-range: U+0400-052F, U+2E80-9FFF, U+F900-FAFF, U+FF00-FFEF; }
 /* Night Stocktake - official site. "Night terminal" style of the game: dark green-black screen, amber + mint text,
    VT323 display font, scanlines, stickers slapped on things. */
 :root {
@@ -12,8 +16,8 @@
   --dim: #6f9c8b;
   --ink: #12121a;
   --receipt: #edeadf;
-  --display: "VT323", "Courier New", monospace;
-  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --display: "VT323", "Fusion Pixel", "Courier New", monospace;
+  --mono: "JetBrains Mono", "Fusion Pixel", ui-monospace, Consolas, monospace;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -201,3 +205,12 @@ footer a { color: var(--mint); text-decoration: none; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .slap, .plate, .corner-sticker, .reveal { opacity: 1 !important; transform: none; }
 }
+
+/* Language switcher (assets/js/i18n.js) */
+.lang { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--mint); background: transparent; border: 1px solid var(--line);
+  padding: 6px 8px; margin-right: 10px; cursor: pointer; letter-spacing: .06em; }
+.lang:hover, .lang:focus { border-color: var(--amber); color: var(--amber); outline: none; }
+.lang option { background: var(--bg); color: var(--paper); }
+/* CJK: no letter-spacing tricks, a touch more line height; Cyrillic titles in the pixel fallback read smaller */
+html[data-lang="zh-Hans"] .kicker, html[data-lang="zh-Hans"] .chip, html[data-lang="zh-Hans"] .nav a { letter-spacing: .02em; }
+html[data-lang="zh-Hans"] body { line-height: 1.75; }

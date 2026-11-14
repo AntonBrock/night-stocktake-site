@@ -6,7 +6,7 @@ Platforms: PC (Steam)
 Players: 1-4, online co-op
 Genre: co-op horror, physics
 Price: TBA
-Language: English
+Languages: English, Simplified Chinese, Russian, Brazilian Portuguese, Spanish, German (interface + subtitles)
 Engine: Unreal Engine 5
 
 SHORT DESCRIPTION
