@@ -214,3 +214,9 @@ footer a { color: var(--mint); text-decoration: none; }
 /* CJK: no letter-spacing tricks, a touch more line height; Cyrillic titles in the pixel fallback read smaller */
 html[data-lang="zh-Hans"] .kicker, html[data-lang="zh-Hans"] .chip, html[data-lang="zh-Hans"] .nav a { letter-spacing: .02em; }
 html[data-lang="zh-Hans"] body { line-height: 1.75; }
+
+/* live Discord counter (widget.json) */
+.dc-live { font-family: var(--mono, monospace); color: var(--mint); margin: 6px 0 18px; display: inline-flex; align-items: center; gap: 8px; }
+.dc-live .dot { width: 9px; height: 9px; border-radius: 50%; background: #3ba55d; box-shadow: 0 0 8px #3ba55d; animation: dcpulse 2s ease-in-out infinite; }
+@keyframes dcpulse { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { .dc-live .dot { animation: none; } }

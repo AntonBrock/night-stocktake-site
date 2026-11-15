@@ -15,6 +15,13 @@
     if (url) { a.href = url; if (!url.startsWith("mailto:")) { a.target = "_blank"; a.rel = "noopener"; } }
     else { a.classList.add("soon"); a.removeAttribute("href"); if (!a.classList.contains("btn")) return; const t = document.createElement("span"); t.className = "tag"; t.textContent = T("SOON"); a.appendChild(t); }
   });
+  // ---- live Discord counter from the public server widget (needs discordGuildId in config.js; hidden if it fails)
+  const live = document.querySelector("[data-discord-live]");
+  if (live && C.discordGuildId && window.fetch) {
+    fetch("https://discord.com/api/guilds/" + C.discordGuildId + "/widget.json").then((r) => r.ok ? r.json() : null).then((w) => {
+      if (w && typeof w.presence_count === "number" && w.presence_count > 0) { live.querySelector(".n").textContent = w.presence_count; live.hidden = false; }
+    }).catch(() => {});
+  }
   document.querySelectorAll("[data-email]").forEach((e) => { e.textContent = C.pressEmail || T("coming soon - ask on our Discord"); });
 
   // ---- hero: stickers slapped in a spiral towards the title, the page kicks on every slap, then the title plate slams

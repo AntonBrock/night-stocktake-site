@@ -242,5 +242,6 @@ window.NS_I18N["ru"] = {
 "coming soon - ask on our Discord": "скоро - спросите в нашем Discord",
 "Language": "Язык",
 "English, Simplified Chinese, Russian, Brazilian Portuguese, Spanish and German: menus, HUD and subtitles.": "Английский, упрощённый китайский, русский, бразильский португальский, испанский и немецкий: меню, интерфейс и субтитры.",
-"EN · 简体中文 · RU · PT-BR · ES · DE (interface + subtitles)": "EN · 简体中文 · RU · PT-BR · ES · DE (интерфейс + субтитры)"
+"EN · 简体中文 · RU · PT-BR · ES · DE (interface + subtitles)": "EN · 简体中文 · RU · PT-BR · ES · DE (интерфейс + субтитры)",
+"online in our Discord right now": "сейчас онлайн в нашем Discord"
 };

@@ -242,5 +242,6 @@ window.NS_I18N["zh-Hans"] = {
 "coming soon - ask on our Discord": "即将推出——请在我们的 Discord 上询问",
 "Language": "语言",
 "English, Simplified Chinese, Russian, Brazilian Portuguese, Spanish and German: menus, HUD and subtitles.": "英语、简体中文、俄语、巴西葡萄牙语、西班牙语和德语：菜单、HUD 和字幕。",
-"EN · 简体中文 · RU · PT-BR · ES · DE (interface + subtitles)": "EN · 简体中文 · RU · PT-BR · ES · DE（界面 + 字幕）"
+"EN · 简体中文 · RU · PT-BR · ES · DE (interface + subtitles)": "EN · 简体中文 · RU · PT-BR · ES · DE（界面 + 字幕）",
+"online in our Discord right now": "人此刻在我们的 Discord 在线"
 };
